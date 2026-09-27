@@ -54,4 +54,4 @@ tests/           restart and round-trip checks
 .github/workflows/ci.yml   builds and checks both projects
 ```
 
-MIT licensed. Original visual design takes cues from [chanhdai.com](https://chanhdai.com/) (dark canvas, precise hairlines and type), without copying its content or assets.
+MIT licensed. Original visual design takes cues from [chanhdai.com](https://chanhdai.com/) (precise hairlines and type, adapted here to a light rounded design), without copying its content or assets.
