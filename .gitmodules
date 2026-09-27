@@ -1,0 +1,3 @@
+[submodule "vendor/tether"]
+	path = vendor/tether
+	url = https://github.com/specterbuilds/tether.git
