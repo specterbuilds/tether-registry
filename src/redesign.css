@@ -14,3 +14,14 @@ main{max-width:1200px;margin:auto}.hero,.playground,.how{border:0;max-width:none
 @media(max-width:540px){.site{display:block}.side-nav{position:static;width:auto;height:60px;min-height:0;display:flex;flex-direction:row;align-items:center;justify-content:space-between;padding:10px 18px}.side-logo{width:37px;height:37px}.side-title{display:block;margin:0;font-size:22px}.side-title span{font-size:10px}.side-group-label,.side-nav nav,.side-bottom{display:none}.app-header{height:54px}.hero,.playground,.how{padding-left:17px;padding-right:17px}.hero{padding-top:19px}.hero h1{font-size:57px}.hero-grid{border-radius:23px}.hero-art{height:205px}.texture-icon{width:100px;height:100px;font-size:75px;border-radius:27px;padding-top:15px}.texture-icon span{font-size:48px}.playground,.how{padding-top:54px}.section-head h2{font-size:43px}.form-panel,.work-intro{padding:24px}.tabs button{min-width:0;flex:1;padding:12px 6px}.tabs button span{font-size:11px}.field-row{grid-template-columns:1fr;gap:0}footer{padding:30px 18px}}
 /* Keep the navigation in the document's own height for complete page captures. */
 @media(min-width:541px){.side-nav{position:relative;top:auto;height:auto;align-self:stretch}}
+/* One display face for every title, including secondary UI titles. */
+h1,h2,h3,h4,h5,h6,
+.side-title,.brand,.work-intro h3,.result h4,.steps h3,
+.tabs button span,.dropzone strong {
+  font-family:'Newsreader',Georgia,serif;
+  font-weight:400;
+  letter-spacing:-.025em;
+}
+.tabs button span{font-size:16px;line-height:1.1}
+.dropzone strong{font-size:19px;line-height:1.2}
+@media(max-width:540px){.tabs button span{font-size:14px}}
