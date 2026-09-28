@@ -25,3 +25,22 @@ h1,h2,h3,h4,h5,h6,
 .tabs button span{font-size:16px;line-height:1.1}
 .dropzone strong{font-size:19px;line-height:1.2}
 @media(max-width:540px){.tabs button span{font-size:14px}}
+/* Sarvam-inspired display rhythm: whitespace leads; the artwork follows. */
+.app-content{background:#fff}.app-header{border-color:#f0f0ef}.hero{padding:0 clamp(24px,4vw,65px)}
+.hero-grid{display:flex;flex-direction:column;min-height:0;border:0;border-radius:0;box-shadow:none;background:transparent;margin:0;overflow:visible}
+.hero-copy{min-height:480px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:65px 18px 54px;background:radial-gradient(ellipse at 50% 68%,#f8f2ed 0%,#fff 62%)}
+.hero-motif{font-family:Georgia,serif;font-size:31px;font-weight:400;color:#d7cbc0;border-bottom:1px solid #eee8e3;line-height:1.1;width:170px;margin:0 auto 20px}
+.hero h1{max-width:800px;margin:20px 0 17px;font-size:clamp(56px,6vw,82px);line-height:1.03;font-weight:400;letter-spacing:-.045em}
+.hero-copy p{font-size:18px;line-height:1.5;max-width:590px;margin:0;color:#676864}
+.hero-link{margin:26px 0 0;border-radius:40px;padding:13px 27px;background:#282930;min-width:140px;justify-content:center}
+.hero-caveat{margin-top:26px;color:#9a9794}
+.hero-art{height:230px;min-height:0;width:100%;border-radius:28px;overflow:hidden;display:flex;align-items:center;justify-content:center;background-size:460px auto}
+.texture-stage{position:relative;z-index:1;width:min(570px,90%);height:135px;border-radius:24px;background:#fffffff0;box-shadow:0 12px 45px #62351a2e;display:flex;justify-content:space-around;align-items:center;border:1px solid #ffffffa8}
+.texture-stage>span{font:500 11px 'DM Mono',monospace;letter-spacing:.07em;color:#9e6650}
+.texture-icon{width:94px;height:94px;border-radius:25px;font-size:71px;padding-top:16px;box-shadow:none;background:#f8e7d8}.texture-icon span{font-size:43px;margin-left:-5px}
+.playground{padding-top:93px}.how{padding-top:86px}.section-head{text-align:center}.section-head h2{margin:13px auto 13px;max-width:740px;font-size:clamp(48px,4.5vw,68px)}.section-head p{margin:0 auto 39px;max-width:620px;font-size:16px;line-height:1.55}
+.workspace{max-width:870px;margin:0 auto;border-color:#ececea;box-shadow:0 22px 60px #2425270a;border-radius:26px}
+.tabs{background:#fff;padding:13px 18px}.tabs button{border-radius:30px}.tabs button.active{background:#f3f3f2;box-shadow:none}
+.work-intro{background:#fdfcfa}.form-panel{background:#fff}.how .steps{max-width:900px;margin:0 auto}.how .notice{max-width:900px;margin:42px auto 0}
+@media(max-width:900px){.hero-copy{min-height:390px}.hero-art{height:195px}.hero h1{font-size:clamp(50px,8vw,72px)}.playground,.how{padding-top:75px}}
+@media(max-width:540px){.hero{padding:0 17px}.hero-copy{min-height:350px;padding:38px 7px 26px}.hero h1{font-size:51px}.hero-copy p{font-size:15px}.hero-art{height:155px;border-radius:21px}.texture-stage{height:101px;border-radius:18px}.texture-stage>span{font-size:8px}.texture-icon{width:70px;height:70px;font-size:52px;border-radius:20px;padding-top:11px}.texture-icon span{font-size:30px}.section-head h2{font-size:44px}.section-head p{font-size:14px}.playground,.how{padding-top:60px}}

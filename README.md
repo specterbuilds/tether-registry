@@ -8,7 +8,7 @@ A React playground and persistent registry for [the Tether SDK](https://github.c
 2. **Download.** Save `tethered-photo.png`. It is a normalized PNG, **not an encrypted or watermarked file**. The signed record lives on the registry server.
 3. **Verify.** Drop, choose or paste the downloaded PNG into the Verify tab. `Tether.verify()` looks up its hash, checks the registry's trusted key and returns the sample details when the bytes match exactly. The database and signing key persist across restarts.
 
-The site has not been deployed. Run it locally using the steps below. Screenshots: [playground](docs/playground.png), [registered photo](docs/registered.png), and [verified details](docs/verified.png), captured from a real browser round trip.
+The site has not been deployed. Run it locally using the steps below. Screenshots: [playground](docs/playground.png), [registered photo](docs/registered.png), [verified details](docs/verified.png), and [mobile](docs/mobile.png), captured from a real browser round trip.
 
 ## Run locally
 
@@ -54,4 +54,4 @@ tests/           restart and round-trip checks
 .github/workflows/ci.yml   builds and checks both projects
 ```
 
-MIT licensed. Visual direction was revised from the user-provided references: a quiet light workspace, rounded panels, a serif display face (Newsreader with Georgia fallback), and an original generated orange pixel/halftone illustration. No reference screenshot or third-party brand asset is embedded.
+MIT licensed. Visual direction began with the user-provided references: a quiet light workspace, rounded panels, a serif display face (Newsreader with Georgia fallback), and an original generated orange pixel/halftone illustration. A later pass studied the live [Sarvam home page](https://www.sarvam.ai/), [Voice Agents](https://www.sarvam.ai/products/voice-agents), and [Text to Speech](https://www.sarvam.ai/apis/text-to-speech) pages for centered editorial headings, restrained body copy, generous whitespace, and a focused live demo below the hero. Newsreader is retained rather than copying Sarvam's proprietary typography. No reference screenshot or third-party brand asset is embedded.

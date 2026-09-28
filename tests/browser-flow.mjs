@@ -34,5 +34,9 @@ try {
   await page.getByText('Record found.').waitFor();
   if (!(await page.locator('.result').innerText()).includes('Alex Sample')) throw new Error('Name missing from verified card');
   await page.screenshot({ path: 'docs/verified.png', fullPage: true });
+  const mobile = await browser.newPage({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 1 });
+  await mobile.goto('http://127.0.0.1:5179/', { waitUntil: 'networkidle' });
+  await mobile.screenshot({ path: 'docs/mobile.png', fullPage: true });
+  await mobile.close();
   console.log('Browser flow passed: register -> download -> reupload -> signed details returned. Screenshots docs/playground.png, docs/registered.png, docs/verified.png. Console errors:', logs);
 } finally { api.kill('SIGKILL'); web.kill('SIGKILL'); await browser.close(); rmSync(data, { recursive: true, force: true }); }
