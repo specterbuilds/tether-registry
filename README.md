@@ -8,7 +8,7 @@ A React playground and persistent registry for [the Tether SDK](https://github.c
 2. **Download.** Save `tethered-photo.png`. It is a normalized PNG, **not an encrypted or watermarked file**. The signed record lives on the registry server.
 3. **Verify.** Drop, choose or paste the downloaded PNG into the Verify tab. `Tether.verify()` looks up its hash, checks the registry's trusted key and returns the sample details when the bytes match exactly. The database and signing key persist across restarts.
 
-The site has not been deployed. Run it locally using the steps below. Screenshots: [playground](docs/playground.png), [registered photo](docs/registered.png), [verified details](docs/verified.png), and [mobile](docs/mobile.png), captured from a real browser round trip.
+The site has not been deployed. Run it locally using the steps below. The documentation page is at `http://127.0.0.1:5173/docs` after starting Vite. Screenshots: [playground](docs/playground.png), [registered photo](docs/registered.png), [verified details](docs/verified.png), [mobile](docs/mobile.png), [documentation](docs/documentation.png), and [mobile documentation](docs/documentation-mobile.png), captured from a real browser round trip.
 
 ## Run locally
 
