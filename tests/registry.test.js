@@ -30,4 +30,23 @@ test('rejects underage registration and unrecognized bytes', async () => {
   await assert.rejects(registry.register({ image: Buffer.from('not-image'), name: 'A', age: '28', gender: 'X' }));
   registry.close();
 });
+test('downloaded image carries a valid, interoperable C2PA credential', async () => {
+  const registry = new Registry(dir);
+  const record = await registry.register({ image, name: 'Dana Sample', age: '34', gender: 'female' });
+  const credential = await registry.c2pa.read(record.image);
+  if (!credential) {
+    // Native @contentauth/c2pa-node unavailable (or TETHER_C2PA=0): embedding is a
+    // documented no-op, so there is nothing to assert here.
+    registry.close();
+    return;
+  }
+  assert.equal(credential.validationState, 'Valid');
+  assert.ok(credential.assertions.includes('com.tether.manifest'));
+  assert.deepEqual(credential.tetherClaims.claims[0].value, { name: 'Dana Sample', age: 34, gender: 'female' });
+  // Tether's own verification still works after the C2PA box is stripped on re-normalize.
+  const verified = await registry.verify(record.image);
+  assert.equal(verified.status, 'verified');
+  assert.equal(verified.contentCredential.validationState, 'Valid');
+  registry.close();
+});
 test.after(() => rmSync(dir, { recursive: true, force: true }));

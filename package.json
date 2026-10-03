@@ -15,6 +15,7 @@
     "check": "npm run test && npm run build"
   },
   "dependencies": {
+    "@contentauth/c2pa-node": "^0.9.9",
     "express": "^5.1.0",
     "multer": "^2.0.2",
     "react": "^19.1.1",
