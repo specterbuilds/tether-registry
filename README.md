@@ -2,6 +2,27 @@
 
 A React playground and persistent registry for [the Tether SDK](https://github.com/specterbuilds/tether). Register a sample image with name, age and gender, download the signed image's matching PNG, and upload or paste it back to see the associated provenance card. This is a **public demo intended for made-up details**, not an identity verification service.
 
+## Algorithms in use
+
+**Cryptographic** (5):
+
+| Algorithm | Role |
+| --- | --- |
+| **Ed25519** | Classical manifest signature (default) |
+| **ML-DSA-65** | Post-quantum manifest signature (FIPS 204 / Dilithium) |
+| **Ed25519 + ML-DSA-65** | Hybrid signature — both must verify |
+| **ES256** (ECDSA P-256 + SHA-256) | Signs the embedded C2PA Content Credential |
+| **SHA-256** | Exact content binding of the normalized PNG |
+
+The three manifest signature schemes are selectable via `TETHER_SIG_ALG`; verification is algorithm-aware, so they can coexist during a post-quantum migration.
+
+**Non-cryptographic** (binding & robustness, not collision-resistant):
+
+| Technique | Role |
+| --- | --- |
+| **dHash perceptual hash** (128-bit) | Similarity matching for the "similar" path |
+| **LSB watermark** (`lsb-v1`) | Lossless invisible mark in the SDK (durable **TrustMark** available, not yet wired in) |
+
 ## See the flow
 
 1. **Register.** Enter sample details and upload a PNG, JPEG or WebP (8 MB maximum). The server rotates and normalizes it to PNG and passes it to `Tether.sign()` with a platform-issued claim. The manifest is Ed25519-signed and saved in SQLite.
